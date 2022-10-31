@@ -1,6 +1,8 @@
-﻿using OpenQA.Selenium;
+using Newtonsoft.Json.Linq;
+using OpenQA.Selenium;
 using System;
 using System.Globalization;
+using System.IO;
 
 namespace TestAutomationSolutionCSharp.Framework
 {
@@ -43,6 +45,15 @@ namespace TestAutomationSolutionCSharp.Framework
 
             return DateTime.Now.AddDays(result).ToString("dd-MM-yyyy");
            
+        }
+
+        public String readJSONData(String obj, String node) 
+        {
+            JObject data = JObject.Parse(File.ReadAllText(@"..\..\\..\\resources\\data\\prodconfig.json"));
+            var myJsonString = JObject.Parse(data.ToString());
+            var jo = JObject.Parse(myJsonString.ToString());
+            var val = jo[obj][node].ToString();
+            return val;
         }
 
     }
