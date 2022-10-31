@@ -1,0 +1,42 @@
+{
+  "defaultproperties": {
+    "url": "aHR0cDovL2F1dG9tYXRpb25wcmFjdGljZS5jb20vaW5kZXgucGhw",
+    "userName": "dmt5MjY4OEBnbWFpbC5jb20=",
+    "passWord": "VGVzdFBhc3MxMg==",
+    "paymentType": "Pay by bank wire",
+    "newPassWord": "VGVzdFBhc3MxMg==",
+    "hotelBookingURL": "https://www.clock-software.com/demo-clockpms/index.html",
+    "emailID": "dummy@gail.com",
+    "lastName": "Kholi",
+    "firstName": "Virat",
+    "phoneNumber": "0789654321",
+    "numberOfNights": "4",
+    "numberOfAdults": "2",
+    "numberOfChild": "0"
+  },
+
+  "addressDetails": {
+    "name": "Vignesh Parameswari",
+    "addLine1": "10 Park Hill Bvld East Ham",
+    "addCity": "Dallas, Ohio 43015",
+    "addCountry": "United States",
+    "phoneNumber": "+447448474484"
+  },
+
+  "creditCardDetails": {
+    "number": "4929 0000 0000 6",
+    "brand": "VISA",
+    "expiryMonth": "05",
+    "expiryYear": "2025"
+  },
+
+  "billingAddressDetails": {
+    "addLine": "10 Park Hill Bvld",
+    "zip": "43015",
+    "city": "London",
+    "state": "Sussex",
+    "country": "United Kingdom"
+  }
+
+
+}
