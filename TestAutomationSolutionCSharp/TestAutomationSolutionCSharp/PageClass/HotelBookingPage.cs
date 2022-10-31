@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
@@ -103,11 +103,11 @@ namespace TestAutomationSolutionCSharp.PageClass
             webSendKeys(arrivalDate, dateAfter);
             webClearField(numberOfNights);
             webClickElement(numberOfNights);
-            webSendKeys(numberOfNights, "4");
+            webSendKeys(numberOfNights, sc.readJSONData("defaultproperties", "numberOfNights"));
             webClearField(numberOfAdults);
-            webSendKeys(numberOfAdults, "2");
+            webSendKeys(numberOfAdults, sc.readJSONData("defaultproperties", "numberOfAdults"));
             webClearField(numberOfChildren);
-            webSendKeys(numberOfChildren, "0");
+            webSendKeys(numberOfChildren, sc.readJSONData("defaultproperties", "numberOfChild"));
             webClickElement(bookNowButton);
             switchToIFrame("clock_pms_iframe_1"); //switch to frame
             ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollBy(0,1400)");//scroll down to the page
@@ -141,10 +141,10 @@ namespace TestAutomationSolutionCSharp.PageClass
         private void createBooking()
         {
 
-            webSendKeys(emailId, "virat.kholi@gmail.com");
-            webSendKeys(lastName, "kholi");
-            webSendKeys(firstName, "virat");
-            webSendKeys(phoneNumber, "07332288990");
+            webSendKeys(emailId, sc.readJSONData("defaultproperties", "emailID"));
+            webSendKeys(lastName, sc.readJSONData("defaultproperties", "lastName"));
+            webSendKeys(firstName, sc.readJSONData("defaultproperties", "firstName"));
+            webSendKeys(phoneNumber, sc.readJSONData("defaultproperties", "phoneNumber"));
             webClickElement(creditCardRadioButton);
             webClickElement(agreePolicyRadioButton);
             webClickElement(createBookingButton);
@@ -156,10 +156,10 @@ namespace TestAutomationSolutionCSharp.PageClass
             String expiryMonth = "credit_card_collect_purchase[expire_month]";
             String expiryYear = "credit_card_collect_purchase[expire_year]";
 
-            webSendKeys(cardNumber, "4929 0000 0000 6");
-            selectDropDownByName(dropDownBrand, "VISA");
-            selectDropDownByName(expiryMonth, "05");
-            selectDropDownByName(expiryYear, "2025");
+            webSendKeys(cardNumber, sc.readJSONData("creditCardDetails", "number"));
+            selectDropDownByName(dropDownBrand, sc.readJSONData("creditCardDetails", "brand"));
+            selectDropDownByName(expiryMonth, sc.readJSONData("creditCardDetails", "expiryMonth"));
+            selectDropDownByName(expiryYear, sc.readJSONData("creditCardDetails", "expiryYear"));
 
         }
 
@@ -167,11 +167,11 @@ namespace TestAutomationSolutionCSharp.PageClass
         {
             String country = "credit_card_collect_purchase[country]";
 
-            webSendKeys(billingAddressLine, "10 Park Hill Bvld");
-            webSendKeys(zip, "43015");
-            webSendKeys(city, "London");
-            webSendKeys(state, "Sussex");
-            selectDropDownByName(country, "United Kingdom");
+            webSendKeys(billingAddressLine, sc.readJSONData("billingAddressDetails", "addLine"));
+            webSendKeys(zip, sc.readJSONData("billingAddressDetails", "zip"));
+            webSendKeys(city, sc.readJSONData("billingAddressDetails", "city"));
+            webSendKeys(state, sc.readJSONData("billingAddressDetails", "state"));
+            selectDropDownByName(country, sc.readJSONData("billingAddressDetails", "country"));
             webClickElement(payButton);
 
         }
