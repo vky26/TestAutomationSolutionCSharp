@@ -1,6 +1,6 @@
 /target/
 /bin/*
 /test-output/*
-/Reports/*
+./Reports/*
 /.idea/*
 /*.iml
