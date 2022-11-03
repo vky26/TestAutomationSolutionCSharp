@@ -1,9 +1,9 @@
 /target/
 /bin/*
 /test-output/*
-TestAutomationSolutionCSharp/Reports/*
-TestAutomationSolutionCSharp/bin/*
-TestAutomationSolutionCSharp/obj/*
+Reports/*
+bin/*
+obj/*
 /.idea/*
 /*.iml
 .vs/*
